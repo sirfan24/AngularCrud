@@ -110,10 +110,9 @@
           name="deparment"
           [(ngModel)]="department"
         >
-          <option value="1">Help Desk</option>
-          <option value="2">HR</option>
-          <option value="3">IT</option>
-          <option value="4">Paroll</option>
+          <option *ngFor="let dept of departments" [value]="dept.id">
+            {{ dept.name }}
+          </option>
         </select>
       </div>
     </div>
