@@ -13,6 +13,9 @@ export class CreateEmployeeComponent implements OnInit {
   // check box is checked by default
   isActive = true;
 
+  // default value for ddl
+  department = 3;
+
   constructor() {}
 
   ngOnInit() {}
