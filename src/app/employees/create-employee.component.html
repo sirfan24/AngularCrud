@@ -39,14 +39,13 @@
 
       <div class="form-group">
         <label>Contact Preference</label>
-        <div class="form-group">
+        <div class="form-control">
           <label class="radio-inline">
             <input
               type="radio"
               value="phone"
               name="contactPreference"
               [(ngModel)]="contactPreference"
-              disabled
             />
             Phone
           </label>
@@ -64,7 +63,7 @@
 
       <div class="form-group">
         <label>Gender</label>
-        <div class="form-group">
+        <div class="form-control">
           <label class="radio-inline">
             <input
               type="radio"
@@ -82,6 +81,20 @@
               [(ngModel)]="gender"
             />
             Female
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-control">
+          <label class="checkbox-inline">
+            <input
+              type="checkbox"
+              name="isActive"
+              [(ngModel)]="isActive"
+              disabled
+            />
+            Is Active
           </label>
         </div>
       </div>
