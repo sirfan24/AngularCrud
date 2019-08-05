@@ -7,6 +7,10 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./create-employee.component.css']
 })
 export class CreateEmployeeComponent implements OnInit {
+
+  // Radio button checked by default
+  contactPreference = 'email';
+
   constructor() {}
 
   ngOnInit() {}
