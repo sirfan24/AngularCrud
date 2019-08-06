@@ -28,6 +28,8 @@ export class CreateEmployeeComponent implements OnInit {
   // partial key word bcoz we are setting only few properties
   datePickerConfig: Partial<BsDatepickerConfig>;
 
+  previewPhoto: boolean = false;
+
   constructor() {
     this.datePickerConfig = Object.assign(
       {},
@@ -45,5 +47,9 @@ export class CreateEmployeeComponent implements OnInit {
 
   saveEmployee(empForm: NgForm): void {
     console.log(empForm.value);
+  }
+
+  togglePhotoPreview() {
+    this.previewPhoto = !this.previewPhoto;
   }
 }
