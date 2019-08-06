@@ -14,11 +14,21 @@
           id="fullName"
           name="fullName"
           [(ngModel)]="fullName"
-          required
           type="text"
+          required
+          #fullNameControl="ngModel"
           class="form-control"
         />
       </div>
+
+      <div>Touched : {{ fullNameControl.touched }}</div>
+      <div>pristine : {{ fullNameControl.pristine }}</div>
+      <div>Valid : {{ fullNameControl.valid }}</div>
+      <br />
+      <hr />
+      <div>Touched : {{ employeeForm.touched }}</div>
+      <div>pristine : {{ employeeForm.pristine }}</div>
+      <div>Valid : {{ employeeForm.valid }}</div>
 
       <div class="form-group">
         <label for="email">Email</label>
@@ -28,6 +38,7 @@
           [(ngModel)]="email"
           type="text"
           class="form-control"
+          required
         />
       </div>
 
