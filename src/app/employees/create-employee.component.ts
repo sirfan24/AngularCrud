@@ -60,8 +60,8 @@ export class CreateEmployeeComponent implements OnInit {
 
   ngOnInit() {}
 
-  saveEmployee(empForm: NgForm): void {
-    console.log(empForm.value);
+  saveEmployee(employee: Employee): void {
+    console.log(employee);
   }
 
   togglePhotoPreview() {
