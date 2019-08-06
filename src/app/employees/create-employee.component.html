@@ -6,22 +6,20 @@
     <div class="panel-body">
       <div
         class="form-group"
-        [class.has-error]="fullNameControl.invalid && fullNameControl.touched"
-        [class.has-success]="fullNameControl.valid"
+        [class.has-error]="name.invalid && name.touched"
+        [class.has-success]="name.valid"
       >
         <label for="fullName" class="control-label">Full name</label>
         <input
-          id="fullName"
-          name="fullName"
-          [(ngModel)]="fullName"
+          id="name"
+          name="name"
+          [(ngModel)]="employee.name"
           type="text"
           required
-          #fullNameControl="ngModel"
+          #name="ngModel"
           class="form-control"
         />
-        <span
-          class="help-block"
-          *ngIf="fullNameControl.invalid && fullNameControl.touched"
+        <span class="help-block" *ngIf="name.invalid && name.touched"
           >Full name is required
         </span>
       </div>
@@ -31,7 +29,7 @@
         <input
           id="email"
           name="email"
-          [(ngModel)]="email"
+          [(ngModel)]="employee.email"
           type="text"
           class="form-control"
           required
@@ -43,7 +41,7 @@
         <input
           id="phoneNumber"
           name="phoneNumber"
-          [(ngModel)]="phoneNumber"
+          [(ngModel)]="employee.phoneNumber"
           type="text"
           class="form-control"
         />
@@ -54,7 +52,7 @@
           <input
             id="dateOfBirth"
             name="dateOfBirth"
-            [(ngModel)]="dateOfBirth"
+            [(ngModel)]="employee.dateOfBirth"
             type="text"
             bsDatepicker
             [bsConfig]="datePickerConfig"
@@ -69,7 +67,7 @@
         <input
           id="photoPath"
           name="photoPath"
-          [(ngModel)]="photoPath"
+          [(ngModel)]="employee.photoPath"
           type="text"
           class="form-control"
         />
@@ -86,7 +84,12 @@
       </div>
 
       <div class="form-group">
-        <img [src]="photoPath" height="200" width="200" *ngIf="previewPhoto" />
+        <img
+          [src]="employee.photoPath"
+          height="200"
+          width="200"
+          *ngIf="previewPhoto"
+        />
       </div>
 
       <div class="form-group">
@@ -97,7 +100,7 @@
               type="radio"
               value="phone"
               name="contactPreference"
-              [(ngModel)]="contactPreference"
+              [(ngModel)]="employee.contactPreference"
             />
             Phone
           </label>
@@ -106,7 +109,7 @@
               type="radio"
               value="email"
               name="contactPreference"
-              [(ngModel)]="contactPreference"
+              [(ngModel)]="employee.contactPreference"
             />
             Email
           </label>
@@ -121,7 +124,7 @@
               type="radio"
               value="male"
               name="gender"
-              [(ngModel)]="gender"
+              [(ngModel)]="employee.gender"
             />
             Male
           </label>
@@ -130,7 +133,7 @@
               type="radio"
               value="female"
               name="gender"
-              [(ngModel)]="gender"
+              [(ngModel)]="employee.gender"
             />
             Female
           </label>
@@ -143,7 +146,7 @@
             <input
               type="checkbox"
               name="isActive"
-              [(ngModel)]="isActive"
+              [(ngModel)]="employee.isActive"
               disabled
             />
             Is Active
@@ -160,7 +163,7 @@
           class="form-control"
           id="deparment"
           name="deparment"
-          [(ngModel)]="department"
+          [(ngModel)]="employee.department"
         >
           <option *ngFor="let dept of departments" [value]="dept.id">
             {{ dept.name }}
@@ -181,3 +184,6 @@
 </form>
 
 Angular generated form model: {{ employeeForm.value | json }}
+<br />
+<br />
+Our employee model : {{ employee | json }}

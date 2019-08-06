@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Department } from '../models/departement.model';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { Employee } from '../models/employee.model';
+import { fromEventPattern } from 'rxjs';
 
 @Component({
   selector: 'app-create-employee',
@@ -29,6 +31,19 @@ export class CreateEmployeeComponent implements OnInit {
   datePickerConfig: Partial<BsDatepickerConfig>;
 
   previewPhoto: boolean = false;
+
+  employee: Employee = {
+    id: null,
+    name: null,
+    gender: null,
+    contactPreference: null,
+    email: null,
+    phoneNumber: null,
+    photoPath: null,
+    isActive: null,
+    dateOfBirth: null,
+    department: null
+  };
 
   constructor() {
     this.datePickerConfig = Object.assign(
