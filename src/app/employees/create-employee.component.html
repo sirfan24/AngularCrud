@@ -38,12 +38,12 @@
           class="form-control"
           #email="ngModel"
           required
-          email
+          pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(pragimtech)\.com$"
         />
         <span class="help-block" *ngIf="email.errors?.required && email.touched"
           >Email is required
         </span>
-        <span class="help-block" *ngIf="email.errors?.email && email.touched"
+        <span class="help-block" *ngIf="email.errors?.pattern && email.touched"
           >Email is invalid
         </span>
       </div>
