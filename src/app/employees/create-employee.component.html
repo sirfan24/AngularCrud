@@ -181,18 +181,25 @@
         </span>
       </div>
 
-      <div class="form-group">
+      <div
+        class="form-group"
+        [class.has-error]="isActive.touched && isActive.invalid"
+      >
         <div class="form-control">
-          <label class="checkbox-inline">
+          <label class="checkbox-inline control-label">
             <input
               type="checkbox"
               name="isActive"
               [(ngModel)]="employee.isActive"
-              disabled
+              [required]="employee.isActive == null"
+              #isActive="ngModel"
             />
             Is Active
           </label>
         </div>
+        <span class="help-block" *ngIf="isActive.touched && isActive.invalid">
+          IsActive is required</span
+        >
       </div>
 
       <div class="form-group">
