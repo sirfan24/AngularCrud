@@ -104,8 +104,13 @@
         />
       </div>
 
-      <div class="form-group">
-        <label>Contact Preference</label>
+      <div
+        class="form-group"
+        [class.has-error]="
+          contactPreference.touched && contactPreference.invalid
+        "
+      >
+        <label class="control-label">Contact Preference</label>
         <div class="form-control">
           <label class="radio-inline">
             <input
@@ -113,6 +118,8 @@
               value="phone"
               name="contactPreference"
               [(ngModel)]="employee.contactPreference"
+              required
+              #contactPreference="ngModel"
             />
             Phone
           </label>
@@ -122,14 +129,24 @@
               value="email"
               name="contactPreference"
               [(ngModel)]="employee.contactPreference"
+              required
+              #contactPreference="ngModel"
             />
             Email
           </label>
         </div>
+        <span
+          class="help-block"
+          *ngIf="contactPreference.touched && contactPreference.invalid"
+          >Contact Preference is required</span
+        >
       </div>
 
-      <div class="form-group">
-        <label>Gender</label>
+      <div
+        class="form-group"
+        [class.has-error]="gender.touched && gender.invalid"
+      >
+        <label class="control-label">Gender</label>
         <div class="form-control">
           <label class="radio-inline">
             <input
@@ -137,6 +154,8 @@
               value="male"
               name="gender"
               [(ngModel)]="employee.gender"
+              required
+              #gender="ngModel"
             />
             Male
           </label>
@@ -146,10 +165,15 @@
               value="female"
               name="gender"
               [(ngModel)]="employee.gender"
+              required
+              #gender="ngModel"
             />
             Female
           </label>
         </div>
+        <span class="help-block" *ngIf="gender.touched && gender.invalid"
+          >Gender is required
+        </span>
       </div>
 
       <div class="form-group">
