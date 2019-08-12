@@ -40,7 +40,7 @@ export class CreateEmployeeComponent implements OnInit {
     email: null,
     phoneNumber: null,
     photoPath: null,
-    isActive: true,
+    isActive: null,
     dateOfBirth: null,
     department: null
   };

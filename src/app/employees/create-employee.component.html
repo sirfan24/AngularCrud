@@ -26,8 +26,7 @@
 
       <div
         class="form-group"
-        [class.has-error]="email.invalid"
-        [class.has-success]="email.valid"
+        [class.has-error]="email.invalid && email.touched"
       >
         <label for="email" class="control-label">Email</label>
         <input
@@ -202,8 +201,11 @@
         >
       </div>
 
-      <div class="form-group">
-        <label for="deparment">
+      <div
+        class="form-group"
+        [class.has-error]="deparment.touched && deparment.invalid"
+      >
+        <label for="deparment" class="control-label">
           Departemnt
         </label>
 
@@ -212,11 +214,17 @@
           id="deparment"
           name="deparment"
           [(ngModel)]="employee.department"
+          required
+          #deparment="ngModel"
         >
+          <option disabled [ngValue]="null">Select Department</option>
           <option *ngFor="let dept of departments" [value]="dept.id">
             {{ dept.name }}
           </option>
         </select>
+        <span class="help-block" *ngIf="deparment.touched && deparment.invalid"
+          >Department is required</span
+        >
       </div>
     </div>
     <div class="panel-footer">
