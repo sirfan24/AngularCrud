@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { SelectRequiredValidatorDirective } from './shared/select-required-validator.directive';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +17,12 @@ const appRoutes: Routes = [
   { path: '', redirectTo: '/list', pathMatch: 'full' }
 ];
 @NgModule({
-  declarations: [AppComponent, ListEmployeesComponent, CreateEmployeeComponent],
+  declarations: [
+    AppComponent,
+    ListEmployeesComponent,
+    CreateEmployeeComponent,
+    SelectRequiredValidatorDirective
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

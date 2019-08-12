@@ -212,17 +212,19 @@
         <select
           class="form-control"
           id="deparment"
+          appSelectorValidator
           name="deparment"
           [(ngModel)]="employee.department"
-          required
           #deparment="ngModel"
         >
-          <option disabled [ngValue]="null">Select Department</option>
+          <option [value]="-1">Select Department</option>
           <option *ngFor="let dept of departments" [value]="dept.id">
             {{ dept.name }}
           </option>
         </select>
-        <span class="help-block" *ngIf="deparment.touched && deparment.invalid"
+        <span
+          class="help-block"
+          *ngIf="deparment.touched && deparment.errors?.defaultSelected"
           >Department is required</span
         >
       </div>
@@ -240,6 +242,10 @@
 </form>
 
 Angular generated form model: {{ employeeForm.value | json }}
+<br />
+<br />
+{{ deparment }}
+
 <br />
 <br />
 Our employee model : {{ employee | json }}
