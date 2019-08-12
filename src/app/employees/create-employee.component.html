@@ -212,12 +212,12 @@
         <select
           class="form-control"
           id="deparment"
-          appSelectorValidator
+          appSelectorValidator="select"
           name="deparment"
           [(ngModel)]="employee.department"
           #deparment="ngModel"
         >
-          <option [value]="-1">Select Department</option>
+          <option value="select">Select Department</option>
           <option *ngFor="let dept of departments" [value]="dept.id">
             {{ dept.name }}
           </option>

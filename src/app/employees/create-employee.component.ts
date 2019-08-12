@@ -42,7 +42,7 @@ export class CreateEmployeeComponent implements OnInit {
     photoPath: null,
     isActive: null,
     dateOfBirth: null,
-    department: '-1'
+    department: 'select'
   };
 
   constructor() {
